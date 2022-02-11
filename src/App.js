@@ -1,7 +1,7 @@
-
 import './App.css';
 import { useState } from 'react';
 import ToDoList from './components/ToDoList';
+
 
 // 1 - Form component using controlled inputs and onSubmitHandler function to submit a new to do
 // 2 - DONE -ToDoList component which will map over todo array and output each todo within the ToDoItem component
@@ -9,13 +9,14 @@ import ToDoList from './components/ToDoList';
 // 4 - Component helpers functions - handleSubmit, handleOnChange, handleDelete (from array index), handleComplete
 // 5 - useState to store the list of todo within array
 // 6 - Spread operator to update the state of the todo array
-// 7 - Conditionalrendering - if not todos dont 
+// 7 - Conditional rendering - style when completing a todo
 // 8 - event handlers - Form = onChange & onSubmit, Onclick (delete & complete)
 
-function App() {
+const App = () => {
 
   const [toDoItems, setToDoItems] = useState([]);
-  const [completed, setCompleted] = useState(true);
+  const [toggleComplete, setToggleComplete] = useState(true);
+  const [complete, isComplete] = useState('');
 
   const [inputValue, setInputValue] = useState('');
 
@@ -26,22 +27,26 @@ function App() {
     let newToDoItems = [...toDoItems];
     newToDoItems.push(inputValue);
     setToDoItems(newToDoItems);
+    setInputValue('');
 
   }
 
   const deleteHandler = (index) => {
-    // console.log('clicked delete');
+    console.log('delete', index);
     let newToDoItems = [...toDoItems];
-    newToDoItems.splice(index, 1);
+    newToDoItems.splice(index,1);
     setToDoItems(newToDoItems);
     
   }
 
-  const changeHandler = (index) => {
-    console.log('clicked complete');
+  const changeHandler = (e, index) => {
+    console.log('change', e, index);
     // let newToDoItems = [...toDoItems];
-    setCompleted(!completed);
-    console.log(completed);
+    setToggleComplete(!toggleComplete, index);
+    console.log(toggleComplete, index);
+    // if(toggleComplete[index] === true) {
+    //   console.log('this is true ')
+    // }
   }
 
   return (
@@ -49,6 +54,7 @@ function App() {
       <main>
         <div id="todoList">
         <h1>All Tasks</h1>
+        {Date()}
           <form onSubmit={submitHandler}>
                 <input 
                   type="text"
@@ -59,7 +65,7 @@ function App() {
                 </input>
                 <button>Submit</button>
           </form>
-          <ToDoList deleteHandler={deleteHandler} changeHandler={changeHandler} toDoItems={ toDoItems } completed={completed} />
+          <ToDoList deleteHandler={deleteHandler} changeHandler={changeHandler} toDoItems={ toDoItems } toggleComplete={toggleComplete} />
         </div>
        
       </main>

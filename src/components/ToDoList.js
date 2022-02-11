@@ -1,10 +1,17 @@
 import ToDoItem from "./ToDoItem";
 
-const ToDoList = ( {toDoItems, deleteHandler, changeHandler, completed } ) => {
+const ToDoList = ( {toDoItems, deleteHandler, changeHandler, toggleComplete} ) => {
     return (
         <div>
             {toDoItems.map((todo, index) => {
-                return <ToDoItem todo={todo} key={index} deleteHandler={deleteHandler} changeHandler={changeHandler} completed={completed} />
+            //    <ToDoItem style={{color: toggleComplete ? '#000' : '#c3c3c3' }} key={index} todo={todo} deleteHandler={deleteHandler} changeHandler={changeHandler} toggleComplete={toggleComplete} />
+                return (
+                    <div className="toDoItem" key={index}>
+                        <p style={{color: toggleComplete ? '#000' : '#c3c3c3' }}>{todo}</p>
+                        <input type='checkbox' onClick={(e) => changeHandler(e.target.value, index)}></input>
+                        <button onClick={() => deleteHandler(index)}>delete</button>
+                    </div>
+                   )  
             })}  
         </div>
     )
