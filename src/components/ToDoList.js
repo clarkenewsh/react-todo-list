@@ -1,4 +1,3 @@
-import ToDoItem from "./ToDoItem";
 
 const ToDoList = ( {toDoItems, deleteHandler, changeHandler, toggleComplete} ) => {
     return (

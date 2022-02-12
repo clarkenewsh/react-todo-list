@@ -39,8 +39,6 @@ const App = () => {
 
   const changeHandler = (index) => {
     console.log('change', index);
-
-    let newToDoItems = [...toDoItems];
     
     setToggleComplete(!toggleComplete);
     console.log(toggleComplete, index);
