@@ -37,8 +37,11 @@ const App = () => {
     
   }
 
-  const changeHandler = (index) => {
+  const changeHandler = (index, todo) => {
     console.log('change', index);
+    // const newTodos = [...toDoItems];
+    // newTodos[index] = todo;
+    // setToDoItems(newTodos);
     
     setToggleComplete(!toggleComplete);
     console.log(toggleComplete, index);
