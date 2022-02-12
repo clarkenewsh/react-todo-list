@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/clarkenewsh/react-todo-list/static/css/main.7544905f.css",
+    "main.js": "/clarkenewsh/react-todo-list/static/js/main.5fb2834c.js",
+    "index.html": "/clarkenewsh/react-todo-list/index.html",
+    "main.7544905f.css.map": "/clarkenewsh/react-todo-list/static/css/main.7544905f.css.map",
+    "main.5fb2834c.js.map": "/clarkenewsh/react-todo-list/static/js/main.5fb2834c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7544905f.css",
+    "static/js/main.5fb2834c.js"
+  ]
+}
