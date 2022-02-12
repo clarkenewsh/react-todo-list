@@ -1,6 +1,6 @@
 import ToDoItem from "./ToDoItem";
 
-const ToDoList = ( {toDoItems, deleteHandler, changeHandler, toggleComplete, isChecked} ) => {
+const ToDoList = ( {toDoItems, deleteHandler, changeHandler, toggleComplete} ) => {
     return (
         <div>
             {toDoItems.map((todo, index) => {

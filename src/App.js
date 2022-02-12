@@ -17,7 +17,6 @@ const App = () => {
   const [toDoItems, setToDoItems] = useState([]);
   const [toggleComplete, setToggleComplete] = useState(true);
   const [inputValue, setInputValue] = useState('');
-  const [isChecked, setIsChecked] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -68,7 +67,7 @@ const App = () => {
                 </input>
                 <button className="btn-submit">Submit</button>
           </form>
-          <ToDoList deleteHandler={deleteHandler} changeHandler={changeHandler} toDoItems={ toDoItems } toggleComplete={toggleComplete} checked={isChecked} />
+          <ToDoList deleteHandler={deleteHandler} changeHandler={changeHandler} toDoItems={ toDoItems } toggleComplete={toggleComplete} />
         </div>
        
       </main>
