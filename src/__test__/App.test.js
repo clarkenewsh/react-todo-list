@@ -22,8 +22,8 @@ describe('input element', () => {
     render(<App />);
     const input = screen.getByPlaceholderText('Add new todo');
     // target the input value text added by user - i.e target.value
-    fireEvent.change(input, { target: {value: "get food"}})
-    expect(input.value).toBe("get food");
+    fireEvent.change(input, { target: {value: "learn react"}})
+    expect(input.value).toBe("learn react");
   });
 
 })
@@ -58,10 +58,10 @@ describe("submit button", () => {
 })
 
 
-// Delete button tests
-describe('delete button', () => {
-  // deletion of an item removed the element so it is no longer displayed to the user
-  test('')
-})
+// // Delete button tests
+// describe('delete button', () => {
+//   // deletion of an todo item removed the element so it is no longer displayed to the user
+//   test('')
+// })
 
 
