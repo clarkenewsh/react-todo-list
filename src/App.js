@@ -34,8 +34,8 @@ const App = () => {
     let newToDoItems = [...toDoItems];
     newToDoItems.splice(index,1);
     setToDoItems(newToDoItems);
-    
   }
+
 
   const changeHandler = (index, todo) => {
     console.log('change', index);

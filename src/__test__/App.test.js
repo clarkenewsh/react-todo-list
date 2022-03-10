@@ -59,9 +59,24 @@ describe("submit button", () => {
 
 
 // // Delete button tests
-// describe('delete button', () => {
-//   // deletion of an todo item removed the element so it is no longer displayed to the user
-//   test('')
-// })
+describe('delete button', () => {
+  // deletion of an todo item removed the element so it is no longer displayed to the user
+  test('renders delete', () => {
+    render(<App />);
+    const button = screen.getByText('Submit');
+    fireEvent.click(button);
+    const deleteButton = screen.getByText('delete');
+    expect(deleteButton).toBeInTheDocument();
+  });
+
+  test('delete button removes todo item', () => {
+    render(<App />);
+    const button = screen.getByText('Submit');
+    fireEvent.click(button);
+    const deleteButton = screen.getByText('delete');
+    fireEvent.click(deleteButton);
+    // expect(deleteButton);
+  })
+})
 
 
